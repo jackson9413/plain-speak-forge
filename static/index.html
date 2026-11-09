@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Plain-Speak Forge</title>
+<link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>Plain-Speak Forge</h1>
+    <p class="tag">Paste a document. Find out whether a real person can read it &mdash; and what to change first.</p>
+  </div>
+  <div class="badges">
+    <span class="badge ok">local-first</span>
+    <span class="badge">no API keys</span>
+    <span class="badge">no network calls</span>
+  </div>
+</header>
+
+<section class="panel input-panel">
+  <div class="row">
+    <label class="field grow">
+      <span>Title</span>
+      <input id="title" type="text" placeholder="Untitled document" />
+    </label>
+    <label class="field">
+      <span>Audience</span>
+      <select id="audience"></select>
+    </label>
+    <label class="field">
+      <span>Sample</span>
+      <select id="sample"><option value="">Choose a sample&hellip;</option></select>
+    </label>
+  </div>
+  <label class="field block">
+    <span>Text</span>
+    <textarea id="text" rows="12" placeholder="Paste a policy notice, help article, email, README, medical instructions, postmortem&hellip;"></textarea>
+  </label>
+  <div class="row actions">
+    <button id="analyze" class="primary">Analyze</button>
+    <button id="loadSample">Load sample</button>
+    <button id="clear" class="ghost">Clear</button>
+    <span id="counter" class="counter"></span>
+    <span id="status" class="status"></span>
+  </div>
+  <p id="audienceBlurb" class="blurb"></p>
+</section>
+
+<section id="results" class="hidden">
+  <div class="panel score-panel">
+    <div class="score-block">
+      <div id="score" class="score">--</div>
+      <div class="score-meta">
+        <div id="verdict" class="verdict">&nbsp;</div>
+        <div id="levels" class="levels"></div>
+      </div>
+    </div>
+    <div class="axis-block">
+      <div id="axes" class="axes"></div>
+      <div id="caps" class="caps hidden"></div>
+    </div>
+  </div>
+
+  <div id="stats" class="statgrid"></div>
+
+  <nav class="tabs" id="tabs">
+    <button data-tab="findings" class="active">Findings <span class="count" id="c-findings"></span></button>
+    <button data-tab="jargon">Jargon <span class="count" id="c-jargon"></span></button>
+    <button data-tab="structure">Structure</button>
+    <button data-tab="hotspots">Hardest passages</button>
+    <button data-tab="fixplan">Fix plan</button>
+    <button data-tab="rewrites">Rewrites</button>
+    <button data-tab="cleaned">Cleaned draft</button>
+    <button data-tab="paragraphs">Paragraphs</button>
+  </nav>
+
+  <div class="panel tabpane active" id="tab-findings">
+    <div id="filters" class="filters">
+      <button class="chip active" data-sev="all">All</button>
+      <button class="chip" data-sev="high">High</button>
+      <button class="chip" data-sev="medium">Medium</button>
+      <button class="chip" data-sev="low">Low</button>
+      <select id="axisFilter">
+        <option value="all">Every axis</option>
+        <option value="readability">Readability</option>
+        <option value="jargon">Jargon</option>
+        <option value="sentence_craft">Sentence craft</option>
+        <option value="structure">Structure</option>
+        <option value="inclusivity">Inclusive language</option>
+      </select>
+    </div>
+    <div id="findings" class="list"></div>
+  </div>
+
+  <div class="panel tabpane" id="tab-jargon">
+    <div id="jargonIntro" class="note"></div>
+    <div id="acronyms"></div>
+    <table class="tbl" id="jargonTable">
+      <thead><tr><th>Term</th><th>Category</th><th class="num">Uses</th><th>Plain alternative</th><th>Example</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="panel tabpane" id="tab-structure">
+    <div id="structureStats" class="statgrid tight"></div>
+    <div id="structureIssues" class="list"></div>
+    <div id="headings" class="headings"></div>
+  </div>
+
+  <div class="panel tabpane" id="tab-hotspots">
+    <p class="note">The sentences most likely to lose a reader. Each is scored on length, jargon, passive voice and nominalisation.</p>
+    <div id="hotspots" class="list"></div>
+  </div>
+
+  <div class="panel tabpane" id="tab-fixplan">
+    <p class="note">Work top to bottom. The estimated gain is what each fix is worth on the overall score.</p>
+    <div id="fixplan" class="list"></div>
+  </div>
+
+  <div class="panel tabpane" id="tab-rewrites">
+    <p class="note">Mechanical rewrites only. The wording is a starting point, not a final edit.</p>
+    <div id="rewrites" class="list"></div>
+  </div>
+
+  <div class="panel tabpane" id="tab-cleaned">
+    <div class="row actions">
+      <button id="copyCleaned">Copy cleaned draft</button>
+      <span id="cleanedNote" class="note inline"></span>
+    </div>
+    <textarea id="cleanedDraft" class="draft" rows="18" readonly></textarea>
+  </div>
+
+  <div class="panel tabpane" id="tab-paragraphs">
+    <p class="note">Paragraph by paragraph. Fix the darkest rows first.</p>
+    <div id="paragraphs" class="list"></div>
+  </div>
+</section>
+
+<section class="panel history-panel">
+  <div class="row">
+    <h2>Recent runs</h2>
+    <button id="refreshHistory" class="ghost">Refresh</button>
+  </div>
+  <div id="history" class="history"></div>
+</section>
+
+<footer class="foot">
+  Plain-Speak Forge &middot; Flask + SQLite + vanilla JS &middot; standard-library analysis engine &middot; your text never leaves this machine.
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

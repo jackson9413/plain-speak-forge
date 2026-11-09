@@ -1,0 +1,7 @@
+# Important Notice Regarding Your Policy
+
+Pursuant to the terms and conditions set forth herein, and pursuant to Section 7(b) of the Agreement, the Company shall notify the insured of the commencement of the implementation of the utilization of certain revised premium rates with respect to the North American portfolio, effective as of the first day of the month following the completion of the requisite regulatory filing process, as the same may be amended, modified, or supplemented from time to time at the sole discretion of the Company without prejudice to any other rights, remedies, or obligations available under the terms of this policy, any of which may be subject to indemnification obligations, adjustments, or other provisions set forth in Exhibit A, as applicable.
+
+For the avoidance of doubt, the foregoing notice is provided for informational purposes only and shall not be construed as a waiver, modification, or amendment of any term, condition, or limitation set forth in the policy, nor shall it be construed as an acknowledgment of any liability, proximate cause, or alleged material adverse change, whether or not any such matter has been alleged, asserted, or adjudicated.
+
+Coverage for claims presented within sixty days of the effective date will be administered in accordance with the then-current schedule of benefits, unless such claims are otherwise subject to the terms of any subsequent amendment to which the insured has consented in accordance with the notice requirements set forth herein.

@@ -1,0 +1,9 @@
+[
+  {"key": "insurance_notice", "file": "insurance_notice.md", "title": "Insurance policy notice", "audience": "consumer_notice", "blurb": "Dense legalese from a premium-rate update letter. The hard case."},
+  {"key": "api_error_guide", "file": "api_error_guide.md", "title": "API error guide", "audience": "technical_docs", "blurb": "Platform runbook soaked in infrastructure jargon."},
+  {"key": "medical_instructions", "file": "medical_instructions.md", "title": "Patient medication instructions", "audience": "general_public", "blurb": "Medication guidance written for patients, not clinicians."},
+  {"key": "refund_policy", "file": "refund_policy.md", "title": "Refund policy", "audience": "consumer_notice", "blurb": "A decent consumer policy with a few soft spots."},
+  {"key": "password_reset", "file": "password_reset.md", "title": "Password reset help article", "audience": "support_article", "blurb": "Clean plain-English support article. The control case."},
+  {"key": "launch_email", "file": "launch_email.md", "title": "Product launch email", "audience": "marketing_web", "blurb": "Hype-heavy marketing copy, every claim vague."},
+  {"key": "incident_postmortem", "file": "incident_postmortem.md", "title": "Incident postmortem", "audience": "internal_team", "blurb": "Internal postmortem with passive voice throughout."}
+]
